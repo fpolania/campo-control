@@ -1,0 +1,147 @@
+:host {
+  display: block;
+}
+
+.login-container {
+  position: relative;
+  min-height: 100vh;
+
+  background-image: url("/assets/images/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  padding: 24px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85));
+
+  backdrop-filter: blur(3px);
+}
+
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 48px 40px;
+
+  border-radius: 24px;
+
+  background: rgba(5, 15, 10, 0.65);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo-section {
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 34px;
+  color: #66d35f;
+  margin-bottom: 10px;
+}
+
+.logo-section h1 {
+  margin: 0;
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.logo-section span {
+  color: #66d35f;
+}
+
+.logo-section h2 {
+  margin-top: 6px;
+  color: #66d35f;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.content h3 {
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.content p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.google-btn {
+  width: 100%;
+
+  height: 58px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.google-btn:hover {
+  transform: translateY(-2px);
+}
+
+.google-btn img {
+  width: 20px;
+}
+
+.location {
+  margin-top: 36px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+}
+
+.location i {
+  color: #66d35f;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    justify-content: center;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+
+  .logo-section h1 {
+    font-size: 34px;
+  }
+
+  .content h3 {
+    font-size: 26px;
+  }
+}
