@@ -39,7 +39,7 @@
       </a>
 
       <a routerLink="/app/payments">
-        <i class="bi bi-cash-stack  fs-3"></i>
+        <i class="bi bi-cash-stack fs-3"></i>
         <strong>Liquidaciones</strong>
       </a>
     </nav>
@@ -48,22 +48,28 @@
   <div class="content-area">
     <header class="topbar">
       <div>
-         <h2>{{ greeting }}</h2>
+        <h2>{{ greeting }}</h2>
         <span>Finca Los Naranjos</span>
       </div>
 
-      <div class="user-info">
-        <i class="bi bi-bell"></i>
+      <div class="profile-section">
+        <div class="user-info">
+          <img [src]="'https://i.pravatar.cc/100'" />
 
-        <div class="avatar">F</div>
+          <div class="user-text">
+            <h4>Pedro Lasso</h4>
+          </div>
+        </div>
+
+        <button class="logout-btn" type="button" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
       </div>
     </header>
 
     <main>
       <router-outlet></router-outlet>
     </main>
-
-    <!-- Navegación móvil -->
     <app-mobile-nav></app-mobile-nav>
   </div>
 </div>
