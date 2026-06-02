@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
+import { WeatherService } from '../../../../core/services/weather.service';
 @Component({
   selector: 'app-dashboard',
   imports: [BaseChartDirective],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   public lineChartType: ChartType = 'line';
 
   public lineChartData: ChartConfiguration<'line'>['data'] = {
@@ -58,4 +59,10 @@ export class DashboardComponent {
       },
     },
   };
+  constructor(private weatherService: WeatherService) {}
+  ngOnInit() {
+    this.weatherService.getCurrentWeather().subscribe((data: any) => {
+      console.log('Current Weather:', data);
+    });
+  }
 }
