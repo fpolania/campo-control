@@ -10,7 +10,7 @@ import { WeatherService } from '../../../../core/services/weather.service';
 })
 export class DashboardComponent implements OnInit {
   public lineChartType: ChartType = 'line';
-
+  weatherData: any;
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
     datasets: [
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
   ngOnInit() {
     this.weatherService.getCurrentWeather().subscribe((data: any) => {
-      console.log('Current Weather:', data);
+      this.weatherData = data;
     });
   }
 }

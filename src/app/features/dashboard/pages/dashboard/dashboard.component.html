@@ -1,34 +1,52 @@
 <div class="dashboard-page">
-<div class="weather-card">
-  <div class="weather-info">
-    <div class="weather-icon">
-      ☀️
-    </div>
+  @if (weatherData) {
+    <div class="weather-card">
+      <div class="weather-info">
+        <div class="weather-icon">☀️</div>
 
-    <div class="weather-details">
-      <h2>22°C</h2>
-      <p>Clima Actual</p>
-      <span>Aipe, Huila</span>
-    </div>
-  </div>
+        <div class="weather-details">
+          <h2>
+            {{ weatherData.current.temperature_2m }}
+            {{ weatherData.current_units.temperature_2m }}
+          </h2>
 
-  <div class="weather-stats">
-    <div class="stat">
-      <span class="label">💧 Humedad</span>
-      <strong>78%</strong>
-    </div>
+          <p>Clima Actual</p>
 
-    <div class="stat">
-      <span class="label">🌧️ Lluvia</span>
-      <strong>40%</strong>
-    </div>
+          <span>Santa Helena, Huila</span>
+        </div>
+      </div>
 
-    <div class="stat">
-      <span class="label">🌬️ Viento</span>
-      <strong>12 km/h</strong>
+      <div class="weather-stats">
+        <div class="stat">
+          <span class="label">💧 Humedad</span>
+
+          <strong>
+            {{ weatherData.current.relative_humidity_2m }}
+            {{ weatherData.current_units.relative_humidity_2m }}
+          </strong>
+        </div>
+
+        <div class="stat">
+          <span class="label">🌧️ Lluvia</span>
+
+          <strong>
+            {{ weatherData.current.precipitation }}
+            {{ weatherData.current_units.precipitation }}
+          </strong>
+        </div>
+
+        <div class="stat">
+          <span class="label">🌬️ Viento</span>
+
+          <strong>
+            {{ weatherData.current.wind_speed_10m }}
+            {{ weatherData.current_units.wind_speed_10m }}
+          </strong>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  }
+
   <div class="stats-grid">
     <div class="stat-card workers">
       <div class="stat-icon">
