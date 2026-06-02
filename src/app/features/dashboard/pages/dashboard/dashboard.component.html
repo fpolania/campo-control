@@ -2,7 +2,11 @@
   @if (weatherData) {
     <div class="weather-card">
       <div class="weather-info">
-        <div class="weather-icon">☀️</div>
+        <div class="weather-icon">
+          <i
+            [class]="getWeatherIconClass(weatherData.current.weather_code)"
+          ></i>
+        </div>
 
         <div class="weather-details">
           <h2>
@@ -10,7 +14,11 @@
             {{ weatherData.current_units.temperature_2m }}
           </h2>
 
-          <p>Clima Actual</p>
+          <p>
+            Sensación:
+            {{ weatherData.current.apparent_temperature }}
+            {{ weatherData.current_units.apparent_temperature }}
+          </p>
 
           <span>Santa Helena, Huila</span>
         </div>
@@ -19,7 +27,6 @@
       <div class="weather-stats">
         <div class="stat">
           <span class="label">💧 Humedad</span>
-
           <strong>
             {{ weatherData.current.relative_humidity_2m }}
             {{ weatherData.current_units.relative_humidity_2m }}
@@ -28,7 +35,6 @@
 
         <div class="stat">
           <span class="label">🌧️ Lluvia</span>
-
           <strong>
             {{ weatherData.current.precipitation }}
             {{ weatherData.current_units.precipitation }}
@@ -37,7 +43,6 @@
 
         <div class="stat">
           <span class="label">🌬️ Viento</span>
-
           <strong>
             {{ weatherData.current.wind_speed_10m }}
             {{ weatherData.current_units.wind_speed_10m }}

@@ -65,4 +65,27 @@ export class DashboardComponent implements OnInit {
       this.weatherData = data;
     });
   }
+  getWeatherIconClass(code: number): string {
+    if (code === 0) {
+      return 'bi bi-brightness-high-fill';
+    }
+
+    if ([1, 2, 3].includes(code)) {
+      return 'bi bi-cloud-sun-fill';
+    }
+
+    if ([45, 48].includes(code)) {
+      return 'bi bi-cloud-fog-fill';
+    }
+
+    if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) {
+      return 'bi bi-cloud-rain-heavy-fill';
+    }
+
+    if ([95, 96, 99].includes(code)) {
+      return 'bi bi-cloud-lightning-rain-fill';
+    }
+
+    return 'bi bi-cloud-fill';
+  }
 }
