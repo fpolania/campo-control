@@ -1,1 +1,106 @@
-<p>dashboard works!</p>
+<div class="dashboard-page">
+  <div class="welcome-card">
+    <div>
+      <h1>Buenos días 👋</h1>
+      <p>Finca Los Naranjos - Aipe, Huila</p>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card workers">
+      <div class="stat-icon">
+        <i class="bi bi-people-fill"></i>
+      </div>
+
+      <div>
+        <h3>24</h3>
+        <span>Trabajadores Activos</span>
+      </div>
+    </div>
+
+    <div class="stat-card coffee">
+      <div class="stat-icon">
+        <i class="bi bi-cup-hot-fill"></i>
+      </div>
+
+      <div>
+        <h3>1.250</h3>
+        <span>KG Recolectados</span>
+      </div>
+    </div>
+
+    <div class="stat-card money">
+      <div class="stat-icon">
+        <i class="bi bi-cash-stack"></i>
+      </div>
+
+      <div>
+        <h3>$3.2M</h3>
+        <span>Pendiente de Pago</span>
+      </div>
+    </div>
+
+    <div class="stat-card lots">
+      <div class="stat-icon">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+
+      <div>
+        <h3>4</h3>
+        <span>Lotes Activos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="production-card">
+      <h4>📈 Producción Últimos 7 Días</h4>
+
+      <div class="chart-container">
+        <canvas
+          baseChart
+          [data]="lineChartData"
+          [options]="lineChartOptions"
+          [type]="'line'"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="ranking-card">
+      <h4>🏆 Top Recolectores</h4>
+
+      <div class="worker-item">
+        <span>🥇 Miguel Rodríguez</span>
+        <strong>1.250 KG</strong>
+      </div>
+
+      <div class="worker-item">
+        <span>🥈 Pedro Pablo</span>
+        <strong>980 KG</strong>
+      </div>
+
+      <div class="worker-item">
+        <span>🥉 Juan Camilo</span>
+        <strong>870 KG</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <button>
+      <i class="bi bi-journal-check"></i>
+      Registrar Jornada
+    </button>
+
+    <button>
+      <i class="bi bi-people-fill"></i>
+      Trabajadores
+    </button>
+
+    <button>
+      <i class="bi bi-cash-stack"></i>
+      Liquidaciones
+    </button>
+  </div>
+</div>

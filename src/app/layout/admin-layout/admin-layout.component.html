@@ -1,1 +1,69 @@
-<p>admin-layout works!</p>
+<div class="admin-layout">
+  <aside class="sidebar">
+    <div class="logo-section">
+      <div class="logo-circle">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/campocontrol-de38b.firebasestorage.app/o/logoCampoControl.png?alt=media&token=f7362a66-6434-4506-adea-475736b3416b"
+          alt="CampoControl"
+          class="logo"
+        />
+      </div>
+
+      <h3>
+        <span class="campo">Campo</span>
+        <span class="control">Control</span>
+      </h3>
+
+      <small>Los Naranjos</small>
+    </div>
+
+    <nav>
+      <a routerLink="/app/dashboard">
+        <i class="bi bi-house-door-fill"></i>
+        Dashboard
+      </a>
+
+      <a routerLink="/app/workers">
+        <i class="bi bi-people-fill"></i>
+        Trabajadores
+      </a>
+
+      <a routerLink="/app/daily-record">
+        <i class="bi bi-journal-check"></i>
+        Registro Diario
+      </a>
+
+      <a routerLink="/app/lots">
+        <i class="bi bi-tree-fill"></i>
+        Lotes
+      </a>
+
+      <a routerLink="/app/payments">
+        <i class="bi bi-cash-stack"></i>
+        Liquidaciones
+      </a>
+    </nav>
+  </aside>
+
+  <div class="content-area">
+    <header class="topbar">
+      <div>
+        <h2>Buenos días 👋</h2>
+        <span>Finca Los Naranjos</span>
+      </div>
+
+      <div class="user-info">
+        <i class="bi bi-bell"></i>
+
+        <div class="avatar">F</div>
+      </div>
+    </header>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Navegación móvil -->
+    <app-mobile-nav></app-mobile-nav>
+  </div>
+</div>

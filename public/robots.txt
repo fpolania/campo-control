@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap:https://campocontrol-de38b.web.app/sitemap.xml
