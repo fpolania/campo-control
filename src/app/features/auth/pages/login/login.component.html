@@ -1,34 +1,85 @@
-<div class="login-container">
+<div class="login-page">
   <div class="overlay"></div>
 
   <div class="login-card">
     <div class="logo-section">
-      <div class="logo">
-        <i class="bi bi-flower1"></i>
+      <div class="logo-circle">
+        <img
+          class="logo"
+          src="https://firebasestorage.googleapis.com/v0/b/campocontrol-de38b.firebasestorage.app/o/logoCampoControl.png?alt=media&token=f7362a66-6434-4506-adea-475736b3416b"
+          alt="Google"
+        />
       </div>
 
-      <h1>Campo<span>Control</span></h1>
+      <h1 class="brand-title">
+        <span class="campo">Campo</span><span class="control">Control</span>
+      </h1>
 
-      <h2>Los Naranjos</h2>
+      <span class="farm-name">
+        <i class="bi bi-leaf-fill"></i>
+        <strong>Los Naranjos</strong>
+      </span>
     </div>
 
     <div class="content">
-      <h3>Gestión inteligente para tu finca cafetera</h3>
+      <h2>
+        Gestión inteligente
+        <br />
+        para tu finca cafetera
+      </h2>
 
-      <p>Controla tu producción, trabajadores, lotes y mucho más.</p>
+      <p>
+        Controla trabajadores, cosechas, lotes y producción desde cualquier
+        lugar.
+      </p>
+
+      <div class="harvest-status open">
+        <div class="status-header">
+          <div class="status-icon">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+
+          <div class="status-info">
+            <span class="status-label"> COSECHA ABIERTA </span>
+
+            <h5>Estamos recibiendo trabajadores</h5>
+          </div>
+        </div>
+
+        <!-- <div class="status-stats">
+          <div>
+            <strong>28</strong>
+            <span>Trabajadores</span>
+          </div>
+
+          <div>
+            <strong>4</strong>
+            <span>Lotes</span>
+          </div>
+        </div> -->
+
+        <button class="apply-btn">
+          <i class="bi bi-person-plus-fill"></i>
+
+          Quiero Trabajar
+        </button>
+      </div>
+
+      <!-- ADMIN -->
+
+      <button class="google-btn" (click)="loginWithGoogle()">
+        <img
+          src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+          alt="Google"
+        />
+
+        Ingresar como Administrador
+      </button>
     </div>
 
-    <button class="google-btn">
-      <img
-        src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-        alt="Google"
-      />
-      Ingresar con Google
-    </button>
-
-    <div class="location">
-      <i class="bi bi-geo-alt"></i>
-      Los Naranjos - Aipe, Huila
+    <div class="footer-location">
+      <i class="bi bi-geo-alt-fill fs-3"></i>
+      <strong> Los Naranjos - Aipe, Huila </strong>
     </div>
   </div>
 </div>
