@@ -1,7 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
 import { WeatherService } from '../../../../core/services/weather.service';
+import { LoadingService } from '../../../../core/services/loading.service';
 @Component({
   selector: 'app-dashboard',
   imports: [BaseChartDirective],
@@ -9,6 +10,7 @@ import { WeatherService } from '../../../../core/services/weather.service';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
+  private loadingService = inject(LoadingService);
   public lineChartType: ChartType = 'line';
   weatherData: any;
   public lineChartData: ChartConfiguration<'line'>['data'] = {
@@ -61,8 +63,10 @@ export class DashboardComponent implements OnInit {
   };
   constructor(private weatherService: WeatherService) {}
   ngOnInit() {
+    this.loadingService.show();
     this.weatherService.getCurrentWeather().subscribe((data: any) => {
       this.weatherData = data;
+      this.loadingService.hide();
     });
   }
   getWeatherIconClass(code: number): string {

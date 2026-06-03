@@ -1,0 +1,23 @@
+@if (loadingService.loading$ | async) {
+  <div class="ia-loading-overlay">
+    <div class="loader-container">
+      <img
+        class="loader-logo"
+        [src]="
+          'https://firebasestorage.googleapis.com/v0/b/campocontrol-de38b.firebasestorage.app/o/logoCampoControl.png?alt=media&token=f7362a66-6434-4506-adea-475736b3416b'
+        "
+        alt="CampoControl"
+      />
+
+      <h1>CampoControl</h1>
+
+      <p>Sincronizando información...</p>
+
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+}
