@@ -122,62 +122,82 @@ nav a.active {
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  min-width: 0;
 }
 
 .topbar {
-  height: 80px;
+  min-height: 80px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 2rem;
+  gap: 1rem;
+
+  padding: 12px 2rem;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   background: rgba(8, 18, 12, 0.95);
 
   backdrop-filter: blur(15px);
+}
 
-  h2 {
-    color: white;
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
+.topbar > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
 
-  span {
-    color: #94a3b8;
-    font-size: 0.9rem;
-  }
+.topbar h2 {
+  color: white;
+
+  margin: 0;
+
+  font-size: 1.6rem;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar span {
+  color: #94a3b8;
+  font-size: 0.9rem;
 }
 
 .profile-section {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+
   flex-shrink: 0;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
 
-  padding: 0.5rem 1rem;
+  gap: 0.75rem;
 
-  border-radius: 18px;
+  padding: 8px 12px;
+
+  border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.04);
 
   border: 1px solid rgba(255, 255, 255, 0.04);
 
   min-width: 0;
+
+  max-width: 220px;
 }
 
 .user-info img {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
 
   border-radius: 50%;
   object-fit: cover;
@@ -194,9 +214,9 @@ nav a.active {
 
   color: white;
 
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 
-  font-weight: 800;
+  font-weight: 700;
 
   white-space: nowrap;
   overflow: hidden;
@@ -209,18 +229,18 @@ nav a.active {
 }
 
 .logout-btn {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
 
   border: none;
 
-  border-radius: 16px;
+  border-radius: 14px;
 
   background: rgba(255, 255, 255, 0.04);
 
   color: white;
 
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   transition: 0.25s ease;
 
@@ -239,7 +259,6 @@ nav a.active {
 .logout-btn:hover {
   background: rgba(255, 0, 0, 0.15);
   color: #ff4d4d;
-  transform: translateY(-2px);
 }
 
 .avatar {
@@ -263,15 +282,11 @@ nav a.active {
 main {
   flex: 1;
   padding: 2rem;
+
+  overflow-y: auto;
 }
 
-/* ========================================= */
-/* MOBILE & TABLET */
-/* ========================================= */
-
-/* ========================================= */
-/* TABLET Y MOVIL */
-/* ========================================= */
+/* TABLET */
 
 @media (max-width: 992px) {
   .sidebar {
@@ -283,62 +298,73 @@ main {
   }
 
   .topbar {
-    height: 70px;
-    padding: 0 12px;
+    min-height: 70px;
+    padding: 12px;
+  }
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .topbar h2 {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 0.75rem;
+    padding-bottom: 90px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+  .topbar {
+    gap: 0.5rem;
+    padding: 10px 12px;
   }
 
   .topbar h2 {
     font-size: 1rem;
-    margin: 0;
-    line-height: 1.2;
   }
 
   .topbar span {
     font-size: 0.7rem;
   }
 
-  .profile-section {
-    gap: 8px;
-  }
-
   .user-info {
-    padding: 4px 8px;
-    gap: 6px;
-    border-radius: 12px;
+    padding: 4px;
+    background: transparent;
+    border: none;
   }
 
   .user-info img {
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
   }
 
   .user-text h4 {
     font-size: 0.75rem;
+    max-width: 70px;
   }
 
   .logout-btn {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 36px;
+    height: 36px;
     font-size: 0.9rem;
   }
 
   main {
-    padding: 10px;
-    padding-bottom: 85px;
+    padding: 0.8rem;
+    padding-bottom: 90px;
   }
 }
 
-/* CELULARES */
+/* SMALL MOBILE */
 
-@media (max-width: 480px) {
-  .topbar {
-    height: 65px;
-    padding: 0 10px;
+@media (max-width: 420px) {
+  .user-text {
+    display: none;
+  }
+
+  .user-info {
+    padding: 0;
   }
 
   .topbar h2 {
@@ -348,67 +374,4 @@ main {
   .topbar span {
     font-size: 0.65rem;
   }
-
-  .user-info {
-    padding: 2px;
-    background: transparent;
-    border: none;
-  }
-
-  .user-info img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .user-text {
-    display: none;
-  }
-
-  .logout-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.8rem;
-  }
-
-  main {
-    padding: 8px;
-    padding-bottom: 85px;
-  }
-}
-
-/* CELULARES PEQUEÑOS */
-
-@media (max-width: 480px) {
-  .user-text {
-    display: none;
-  }
-
-  .topbar {
-    padding: 10px 12px;
-  }
-
-  .topbar h2 {
-    font-size: 1rem;
-  }
-
-  .user-info {
-    padding: 0.3rem;
-  }
-
-  .user-info img {
-    width: 34px;
-    height: 34px;
-  }
-
-  .logout-btn {
-    width: 34px;
-    height: 34px;
-    font-size: 0.9rem;
-  }
-
-  main {
-    padding: 0.75rem;
-    padding-bottom: 90px;
-  } 
-  
 }

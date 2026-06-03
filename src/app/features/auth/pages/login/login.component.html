@@ -1,6 +1,5 @@
 <div class="login-page">
   <div class="overlay"></div>
-
   <div class="login-card">
     <div class="logo-section">
       <div class="logo-circle">
@@ -51,14 +50,20 @@
           Quiero Trabajar
         </button>
       </div>
-      <button class="google-btn" (click)="loginWithGoogle()">
-        <img
-          src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-          alt="Google"
-        />
-
-        Ingresar como Administrador
-      </button>
+      @if (!validatedPlayer) {
+        <button class="google-btn mt-5" (click)="showDocumentPrompt()">
+          <i class="bi bi-shield-lock-fill"></i>
+          <span> Acceso a la Finca </span>
+        </button>
+      } @else {
+        <button class="google-btn mt-5" (click)="loginWithGoogle()">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+            width="22"
+          />
+          <span> Continuar con Google </span>
+        </button>
+      }
     </div>
 
     <div class="footer-location">

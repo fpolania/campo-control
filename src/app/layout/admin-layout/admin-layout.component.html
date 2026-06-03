@@ -49,16 +49,11 @@
     <header class="topbar">
       <div>
         <h2>{{ greeting }}</h2>
-        <span>Finca Los Naranjos</span>
       </div>
 
       <div class="profile-section">
         <div class="user-info">
-          <img [src]="'https://i.pravatar.cc/100'" />
-
-          <div class="user-text">
-            <h4>Pedro Lasso</h4>
-          </div>
+          <img [src]="currentUser?.photoURL || 'https://i.pravatar.cc/100'" />
         </div>
 
         <button class="logout-btn" type="button" (click)="logout()">
