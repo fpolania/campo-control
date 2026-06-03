@@ -33,21 +33,59 @@
           </strong>
         </div>
 
-        <div class="stat">
-          <span class="label">🌧️ Lluvia</span>
-          <strong>
-            {{ weatherData.current.precipitation }}
-            {{ weatherData.current_units.precipitation }}
-          </strong>
-        </div>
+      <div class="weather-card">
+  <div class="weather-top">
+    <div class="weather-icon">
+      <i [class]="getWeatherIconClass(weatherData.current.weather_code)"></i>
+    </div>
 
-        <div class="stat">
-          <span class="label">🌬️ Viento</span>
-          <strong>
-            {{ weatherData.current.wind_speed_10m }}
-            {{ weatherData.current_units.wind_speed_10m }}
-          </strong>
-        </div>
+    <div class="weather-details">
+      <h2>
+        {{ weatherData.current.temperature_2m }}
+        {{ weatherData.current_units.temperature_2m }}
+      </h2>
+
+      <p>
+        Sensación:
+        {{ weatherData.current.apparent_temperature }}
+        {{ weatherData.current_units.apparent_temperature }}
+      </p>
+
+      <span>Santa Helena, Huila</span>
+    </div>
+  </div>
+
+  <div class="weather-stats">
+    <div class="stat">
+      <i class="bi bi-droplet-fill"></i>
+      <strong>
+        {{ weatherData.current.relative_humidity_2m }}
+        {{ weatherData.current_units.relative_humidity_2m }}
+      </strong>
+      <small>Humedad</small>
+    </div>
+
+    <div class="stat">
+      <i class="bi bi-cloud-rain-fill"></i>
+      <strong>
+        {{ weatherData.current.precipitation }}
+        {{ weatherData.current_units.precipitation }}
+      </strong>
+      <small>Lluvia</small>
+    </div>
+
+    <div class="stat">
+      <i class="bi bi-wind"></i>
+      <strong>
+        {{ weatherData.current.wind_speed_10m }}
+        {{ weatherData.current_units.wind_speed_10m }}
+      </strong>
+      <small>Viento</small>
+    </div>
+  </div>
+</div>
+
+      
       </div>
     </div>
   }

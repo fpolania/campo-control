@@ -24,6 +24,14 @@ export const routes: Routes = [
             (c) => c.DashboardComponent,
           ),
       },
+      {
+        path:'workers',
+        loadComponent: ()=>
+          import('./features/dashboard/pages/workers/workers.component').then(
+            (c) => c.WorkersComponent,
+
+          ),
+      },
 
       {
         path: '',

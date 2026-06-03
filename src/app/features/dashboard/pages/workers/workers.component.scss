@@ -1,0 +1,451 @@
+.workers-page {
+  min-height: 100vh;
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(53, 160, 62, .18),
+      transparent 30%
+    ),
+    #08120c;
+
+  color: #fff;
+}
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.workers-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+.worker-form-card {
+  background: #0f1915;
+
+  border: 1px solid rgba(76, 175, 80, .15);
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  position: sticky;
+  top: 20px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.02),
+    0 10px 30px rgba(0,0,0,.25);
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.worker-form-card label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d7d7d7;
+
+  font-size: .85rem;
+}
+
+.worker-form-card .form-control,
+.worker-form-card .form-select {
+  height: 48px;
+
+  background: #1b2922;
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 12px;
+
+  color: white;
+}
+
+.worker-form-card .form-control:focus,
+.worker-form-card .form-select:focus {
+  background: #1b2922;
+
+  color: white;
+
+  border-color: #41e43b;
+
+  box-shadow: none;
+}
+
+.save-btn {
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  margin-top: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #43e63a,
+    #2fb62c
+  );
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: .2s;
+}
+
+.save-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.save-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.error-text {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #ff6b6b;
+
+  font-size: .75rem;
+}
+
+/* ==========================
+   PANEL DERECHO
+========================== */
+
+.workers-container {
+  background: #0f1915;
+
+  border: 1px solid rgba(255,255,255,.05);
+
+  border-radius: 20px;
+
+  padding: 24px;
+
+  min-height: 600px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.02),
+    0 10px 30px rgba(0,0,0,.25);
+}
+
+.workers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  h5 {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.counter {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  background: rgba(67,230,58,.15);
+
+  color: #41e43b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.workers-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(210px, 1fr));
+
+  gap: 18px;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.worker-card {
+  background: #18231e;
+
+  border-radius: 18px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(255,255,255,.04);
+
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: .25s ease;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.02),
+    0 10px 25px rgba(0,0,0,.20);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(65,228,59,.25);
+  }
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-wrapper {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 10px;
+
+  background: #41e43b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: white;
+
+  i {
+    font-size: 1.3rem;
+  }
+}
+
+.worker-data {
+  flex: 1;
+
+  h6 {
+    margin: 0;
+
+    color: white;
+
+    font-size: .82rem;
+    font-weight: 700;
+  }
+
+  small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8f9c96;
+
+    font-size: .72rem;
+  }
+}
+
+.role-badge {
+  margin-top: 14px;
+
+  width: fit-content;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: rgba(65,228,59,.12);
+
+  color: #41e43b;
+
+  font-size: .65rem;
+
+  font-weight: 700;
+}
+
+.status-row {
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #67ff61;
+
+  font-size: .8rem;
+
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #67ff61;
+
+  box-shadow: 0 0 10px #67ff61;
+}
+
+.actions {
+  margin-top: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 6px;
+}
+
+.edit-btn,
+.delete-btn,
+.view-btn {
+  height: 32px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  color: white;
+
+  font-size: .7rem;
+
+  font-weight: 600;
+
+  transition: .2s;
+}
+
+.edit-btn {
+  background: #20365e;
+}
+
+.delete-btn {
+  background: #5a313b;
+}
+
+.view-btn {
+  background: #1f6d13;
+}
+
+.edit-btn:hover,
+.delete-btn:hover,
+.view-btn:hover {
+  filter: brightness(1.15);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1200px) {
+
+  .workers-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .workers-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .worker-form-card {
+    position: relative;
+    top: unset;
+  }
+
+  .workers-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .workers-page {
+    padding: 16px;
+  }
+
+  .workers-container,
+  .worker-form-card {
+    padding: 18px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .workers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .counter {
+    align-self: flex-end;
+  }
+
+  .actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .view-btn {
+    grid-column: span 2;
+  }
+
+}

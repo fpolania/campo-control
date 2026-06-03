@@ -1,8 +1,6 @@
 .admin-layout {
   min-height: 100vh;
-
   display: flex;
-
   background: #08120c;
 }
 
@@ -25,7 +23,6 @@
 
 .logo-section {
   text-align: center;
-
   margin-bottom: 2.5rem;
 }
 
@@ -57,23 +54,16 @@
 
 .logo-section h3 {
   margin: 0;
-
   font-size: 1.9rem;
-
   font-weight: 800;
-
   letter-spacing: -1px;
 }
 
 .logo-section small {
   display: block;
-
   margin-top: 0.3rem;
-
   color: #4ade80;
-
   font-size: 0.85rem;
-
   font-weight: 600;
 }
 
@@ -83,34 +73,26 @@
 
 .control {
   color: #22c55e;
-
   text-shadow: 0 0 15px rgba(34, 197, 94, 0.25);
 }
 
 nav {
   display: flex;
-
   flex-direction: column;
-
   gap: 0.5rem;
 }
 
 nav a {
   color: #cbd5e1;
-
   text-decoration: none;
-
   padding: 1rem;
-
   border-radius: 14px;
 
   display: flex;
   align-items: center;
-
   gap: 0.9rem;
 
   transition: all 0.25s ease;
-
   font-weight: 500;
 }
 
@@ -120,9 +102,7 @@ nav a i {
 
 nav a:hover {
   background: rgba(34, 197, 94, 0.12);
-
   color: white;
-
   transform: translateX(3px);
 }
 
@@ -140,7 +120,6 @@ nav a.active {
 
 .content-area {
   flex: 1;
-
   display: flex;
   flex-direction: column;
 }
@@ -162,35 +141,27 @@ nav a.active {
 
   h2 {
     color: white;
-
     margin: 0;
-
     font-size: 1.6rem;
-
     font-weight: 700;
   }
 
   span {
     color: #94a3b8;
-
     font-size: 0.9rem;
   }
 }
 
 .profile-section {
   display: flex;
-
   align-items: center;
-
   gap: 1rem;
-
   flex-shrink: 0;
 }
+
 .user-info {
   display: flex;
-
   align-items: center;
-
   gap: 0.8rem;
 
   padding: 0.5rem 1rem;
@@ -209,7 +180,6 @@ nav a.active {
   height: 50px;
 
   border-radius: 50%;
-
   object-fit: cover;
 
   flex-shrink: 0;
@@ -229,19 +199,14 @@ nav a.active {
   font-weight: 800;
 
   white-space: nowrap;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
 }
 
 .user-text span {
   color: rgba(255, 255, 255, 0.45);
-
   font-size: 0.75rem;
 }
-
-/* LOGOUT */
 
 .logout-btn {
   width: 50px;
@@ -260,9 +225,7 @@ nav a.active {
   transition: 0.25s ease;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   cursor: pointer;
@@ -270,15 +233,12 @@ nav a.active {
   flex-shrink: 0;
 
   -webkit-tap-highlight-color: transparent;
-
   touch-action: manipulation;
 }
 
 .logout-btn:hover {
   background: rgba(255, 0, 0, 0.15);
-
   color: #ff4d4d;
-
   transform: translateY(-2px);
 }
 
@@ -295,7 +255,6 @@ nav a.active {
   align-items: center;
 
   color: white;
-
   font-weight: 700;
 
   box-shadow: 0 0 15px rgba(34, 197, 94, 0.25);
@@ -303,29 +262,153 @@ nav a.active {
 
 main {
   flex: 1;
-
   padding: 2rem;
-
-  overflow-y: auto;
 }
+
+/* ========================================= */
+/* MOBILE & TABLET */
+/* ========================================= */
+
+/* ========================================= */
+/* TABLET Y MOVIL */
+/* ========================================= */
 
 @media (max-width: 992px) {
   .sidebar {
     display: none;
   }
 
+  .content-area {
+    width: 100%;
+  }
+
   .topbar {
     height: 70px;
+    padding: 0 12px;
 
-    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    h2 {
-      font-size: 1.3rem;
-    }
+  .topbar h2 {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .topbar span {
+    font-size: 0.7rem;
+  }
+
+  .profile-section {
+    gap: 8px;
+  }
+
+  .user-info {
+    padding: 4px 8px;
+    gap: 6px;
+    border-radius: 12px;
+  }
+
+  .user-info img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .user-text h4 {
+    font-size: 0.75rem;
+  }
+
+  .logout-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.9rem;
   }
 
   main {
-    padding: 1rem;
-    padding-bottom: 90px;
+    padding: 10px;
+    padding-bottom: 85px;
   }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+  .topbar {
+    height: 65px;
+    padding: 0 10px;
+  }
+
+  .topbar h2 {
+    font-size: 0.95rem;
+  }
+
+  .topbar span {
+    font-size: 0.65rem;
+  }
+
+  .user-info {
+    padding: 2px;
+    background: transparent;
+    border: none;
+  }
+
+  .user-info img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .user-text {
+    display: none;
+  }
+
+  .logout-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  main {
+    padding: 8px;
+    padding-bottom: 85px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 480px) {
+  .user-text {
+    display: none;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .topbar h2 {
+    font-size: 1rem;
+  }
+
+  .user-info {
+    padding: 0.3rem;
+  }
+
+  .user-info img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logout-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 0.75rem;
+    padding-bottom: 90px;
+  } 
+  
 }

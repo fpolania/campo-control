@@ -1,0 +1,154 @@
+<div class="workers-page">
+
+  <div class="workers-layout">
+
+    <form class="worker-form-card" [formGroup]="workerForm" (ngSubmit)="saveWorker()">
+
+      <div class="form-title">
+        <i class="bi bi-plus-lg"></i>
+        Nuevo Trabajador
+      </div>
+
+      <div class="mb-3">
+
+        <label>Nombre</label>
+
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre del trabajador" />
+
+        @if (
+        workerForm.get('name')?.invalid &&
+        workerForm.get('name')?.touched
+        ) {
+        <small class="error-text">
+          El nombre es obligatorio
+        </small>
+        }
+
+      </div>
+
+      <div class="mb-3">
+
+        <label>Documento</label>
+
+        <input type="text" class="form-control" formControlName="document" placeholder="Número documento" />
+
+        @if (
+        workerForm.get('document')?.invalid &&
+        workerForm.get('document')?.touched
+        ) {
+
+        <small class="error-text">
+
+          @if(workerForm.get('document')?.errors?.['required']) {
+          El documento es obligatorio
+          }
+
+          @if(workerForm.get('document')?.errors?.['minlength']) {
+          El documento debe tener mínimo 5 caracteres
+          }
+
+        </small>
+
+        }
+
+      </div>
+
+      <div class="mb-3">
+
+        <label>Estado</label>
+
+        <select class="form-select" formControlName="status">
+          <option value="Activo">
+            Activo
+          </option>
+
+          <option value="Inactivo">
+            Inactivo
+          </option>
+        </select>
+
+      </div>
+
+      <button type="submit" class="save-btn" [disabled]="workerForm.invalid">
+        <i class="bi bi-check-circle"></i>
+        Guardar trabajador
+      </button>
+
+    </form>
+
+    <!-- PANEL DERECHO -->
+    <div class="workers-container">
+
+      <div class="workers-header">
+
+        <h5>
+          <i class="bi bi-people-fill"></i>
+          Trabajadores registrados
+        </h5>
+
+        <div class="counter">
+          {{ workers.length }}
+        </div>
+
+      </div>
+
+      <div class="workers-grid">
+
+        @for (worker of workers; track worker.name) {
+
+        <div class="worker-card">
+
+          <div class="card-top">
+
+            <div class="avatar-wrapper">
+              <i class="bi bi-person-bounding-box fs-2"></i>
+            </div>
+
+            <div class="worker-data">
+              <h6>{{ worker.name }}</h6>
+              <small>{{ worker.kg }} KG</small>
+            </div>
+
+          </div>
+
+          <div class="role-badge">
+            TRABAJADOR
+          </div>
+
+          <div class="status-row">
+            <span class="status-dot"></span>
+            <span>
+              {{ worker.active ? 'Activo' : 'Inactivo' }}
+            </span>
+          </div>
+
+          <div class="actions">
+
+            <button type="button" class="edit-btn">
+              <i class="bi bi-pencil-fill"></i>
+              Editar
+            </button>
+
+            <button type="button" class="delete-btn">
+              <i class="bi bi-trash-fill"></i>
+              Eliminar
+            </button>
+
+            <button type="button" class="view-btn">
+              <i class="bi bi-eye"></i>
+              Perfil
+            </button>
+
+          </div>
+
+        </div>
+
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
