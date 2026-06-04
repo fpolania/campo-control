@@ -4,9 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/auth/pages/login/login.component').then(
-        (c) => c.LoginComponent,
-      ),
+      import('./features/login/login.component').then((c) => c.LoginComponent),
   },
 
   {
@@ -20,19 +18,31 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadComponent: () =>
-          import('./features/dashboard/pages/dashboard/dashboard.component').then(
+          import('./features/dashboard/dashboard.component').then(
             (c) => c.DashboardComponent,
           ),
       },
       {
-        path:'workers',
-        loadComponent: ()=>
-          import('./features/dashboard/pages/workers/workers.component').then(
+        path: 'workers',
+        loadComponent: () =>
+          import('./features/workers/workers.component').then(
             (c) => c.WorkersComponent,
-
           ),
       },
-
+      {
+        path: 'workers',
+        loadComponent: () =>
+          import('./features/workers/workers.component').then(
+            (c) => c.WorkersComponent,
+          ),
+      },
+      {
+        path: 'daily-records',
+        loadComponent: () =>
+          import('./features/daily-records/daily-records.component').then(
+            (c) => c.DailyRecordsComponent,
+          ),
+      },
       {
         path: '',
         redirectTo: 'dashboard',

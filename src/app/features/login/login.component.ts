@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../../../core/services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import Swal from 'sweetalert2';
-import { SUPER_ADMINS } from '../../../../core/constants/emails.constant';
+import { SUPER_ADMINS } from '../../core/constants/emails.constant';
 declare const bootstrap: any;
 @Component({
   selector: 'app-login',

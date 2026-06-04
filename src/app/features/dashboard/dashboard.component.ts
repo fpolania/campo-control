@@ -1,8 +1,8 @@
 import { Component, inject, Inject, OnInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
-import { WeatherService } from '../../../../core/services/weather.service';
-import { LoadingService } from '../../../../core/services/loading.service';
+import { WeatherService } from '../../core/services/weather.service';
+import { LoadingService } from '../../core/services/loading.service';
 @Component({
   selector: 'app-dashboard',
   imports: [BaseChartDirective],

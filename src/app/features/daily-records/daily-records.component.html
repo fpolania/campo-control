@@ -1,0 +1,48 @@
+<div class="daily-records-page">
+  <div class="header">
+    <h1>Registro Diario</h1>
+
+    <input type="date" class="date-input" />
+  </div>
+
+  <div class="records-grid">
+    @for (worker of workers; track worker.id) {
+      <div class="worker-card">
+        <div class="worker-header">
+          <div class="worker-profile">
+            <img [src]="worker.photo" [alt]="worker.name" />
+
+            <h3>{{ worker.name }}</h3>
+          </div>
+
+          <div class="total-badge">{{ getTotal(worker.weights) }} KG</div>
+        </div>
+
+        <div class="weights">
+          @for (weight of worker.weights; track $index) {
+            <div class="weight-chip" (click)="editWeight(worker, $index)">
+              <span>{{ weight }} KG</span>
+            </div>
+          }
+        </div>
+
+        <div class="worker-footer">
+          <button
+            class="btn btn-success btn-sm"
+            type="button"
+            (click)="saveWorker(worker)"
+          >
+            <i class="bi bi-floppy fs-4"></i>
+          </button>
+          <button
+            class="btn btn-info btn-sm"
+            type="button"
+            (click)="addWeight(worker)"
+          >
+            <i class="bi bi-plus-lg fs-4"></i>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

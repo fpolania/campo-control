@@ -28,7 +28,7 @@ export class AdminLayoutComponent implements OnInit {
     });
   }
   setGreeting(name: string): void {
-    const nameFis = name.split(' ')[0];
+    const nameFis = name.split(' ')[0].toUpperCase();
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) {
       this.greeting = `Buenos días, Don ${nameFis} 👋`;
